@@ -13,6 +13,6 @@ int check_if_root_node(const binary_tree_t *node)
 if (node == NULL || node->parent != NULL)
 return (0);
 
-Copy
+
 return (1);
 }
