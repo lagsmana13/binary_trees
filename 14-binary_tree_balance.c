@@ -1,42 +1,34 @@
 #include "binary_trees.h"
 
 /**
-
-measure_binary_tree_balance - Measures the balance factor of a binary tree.
-@tree: A pointer to the root node of the tree to measure the balance factor.
-Return: If tree is NULL, the function returns 0.
-Copy
-    Otherwise, it returns the balance factor.
-*/
-int measure_binary_tree_balance(const binary_tree_t *tree)
+ * calculate_tree_balance - Determines the equilibrium factor of a binary tree.
+ * @structure: A pointer to the root node of the tree to calculate the equilibrium factor.
+ *
+ * Return: If the tree is NULL, return 0. Otherwise, return the equilibrium factor.
+ */
+int calculate_tree_balance(const binary_tree_t *structure)
 {
-if (tree)
-return (measure_binary_tree_height(tree->left) - measure_binary_tree_height(tree->right));
+	if (structure)
+		return (calculate_tree_height(structure->left) - calculate_tree_height(structure->right));
 
-Copy
-return (0);
+	return (0);
 }
 
 /**
-
-measure_binary_tree_height - Measures the height of a binary tree.
-@tree: A pointer to the root node of the tree to measure the height.
-Return: If tree is NULL, the function returns 0.
-Copy
-    Otherwise, it returns the height of the tree.
-*/
-size_t measure_binary_tree_height(const binary_tree_t *tree)
+ * calculate_tree_height - Determines the height of a binary tree.
+ * @structure: A pointer to the root node of the tree to calculate the height.
+ *
+ * Return: If the tree is NULL, the function must return 0. Otherwise, return the height.
+ */
+size_t calculate_tree_height(const binary_tree_t *structure)
 {
-if (tree)
-{
-size_t left_height = 0, right_height = 0;
+	if (structure)
+	{
+		size_t left_height = 0, right_height = 0;
 
-xl
-Copy
-    left_height = tree->left ? 1 + measure_binary_tree_height(tree->left) : 1;
-    right_height = tree->right ? 1 + measure_binary_tree_height(tree->right) : 1;
-    return ((left_height > right_height) ? left_height : right_height);
-}
-
-return (0);
+		left_height = structure->left ? 1 + calculate_tree_height(structure->left) : 1;
+		right_height = structure->right ? 1 + calculate_tree_height(structure->right) : 1;
+		return ((left_height > right_height) ? left_height : right_height);
+	}
+	return (0);
 }
