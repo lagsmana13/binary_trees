@@ -1,16 +1,15 @@
 #include "binary_trees.h"
 
 /**
-
-delete_binary_tree - Deletes a binary tree.
-@tree: A pointer to the root node of the tree to delete.
-*/
-void delete_binary_tree(binary_tree_t *tree)
+ * eliminate_binary_tree - Eradicates an entire binary tree and releases the allocated memory.
+ * @structure: A pointer to the root node of the tree to eliminate.
+ */
+void eliminate_binary_tree(binary_tree_t *structure)
 {
-if (tree != NULL)
-{
-delete_binary_tree(tree->left);
-delete_binary_tree(tree->right);
-free(tree);
-}
+    if (structure != NULL)
+    {
+        eliminate_binary_tree(structure->left);
+        eliminate_binary_tree(structure->right);
+        free(structure);
+    }
 }
